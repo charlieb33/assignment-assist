@@ -11,8 +11,8 @@ Allows users to keep track of what courses they have and assignments for them. U
 ## Key Index
 1. Title
 2. Sign Up/Log Out/User Info Section
-3. Log In
-4. Register
+3. Log In (if User is NOT Signed In)
+4. Register (if User is NOT Signed In)
 5. Course List
 6. Course Item
 7. Log In Form
@@ -24,8 +24,8 @@ Allows users to keep track of what courses they have and assignments for them. U
 13. Email Input (Register)
 14. Password Input (Register)
 15. Submit Button (Register)
-16. Username of Logged In User
-17. Log Out Button
+16. Username (if User IS Signed In)
+17. Log Out Button (if User IS Signed In)
 18. Create Course
 19. Create/Edit Course Form
 20. Course Name Input
