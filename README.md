@@ -1,4 +1,4 @@
-# homework-app
+# assignment-assist
 
 ## About the App
 Allows users to keep track of what courses they have and assignments for them. Users can create a new account or log into an existing one. Only users that are logged in may create, edit, or remove courses and assignments. Regardless of whether or not the user is logged in, they may still see the courses and their corresponding assignments.
