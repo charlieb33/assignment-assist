@@ -7,6 +7,8 @@ Allows users to keep track of what courses they have and assignments for them. U
 <img width="1000" alt="Screen Shot 2019-09-11 at 8 59 28 AM" src="https://user-images.githubusercontent.com/44616151/64699618-23e44200-d473-11e9-80c1-29f84f854bb2.png">
 <img width="1015" alt="Screen Shot 2019-09-11 at 8 59 54 AM" src="https://user-images.githubusercontent.com/44616151/64701008-f0ef7d80-d475-11e9-9e6e-28afc932c6ab.png">
 
+## ERD
+<img width="712" alt="Screen Shot 2019-09-11 at 10 27 40 AM" src="https://user-images.githubusercontent.com/44616151/64706264-36fd0f00-d47f-11e9-9ba4-bfd893e97915.png">
 
 ## Key Index
 1. Title
