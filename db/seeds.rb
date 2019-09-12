@@ -12,5 +12,5 @@ Assignment.create!(name: 'Unit 4 Project', description: 'Build a fullstack app u
 
 User.create!(username: 'Henry', email: 'hstein@fakemail.com')
 Course.create!(name: 'Career Building in Software Engineering', description: 'Learn what you need to do land a job in the software engineering industry from basic professional mannerisms to your portfolio', user_id: 2)
-Assignment.create!(name: 'Portfolio', description: 'Create a portolio showcasing some of your best projects', due_date: '10/4/2019', course_id: 2)
-Assignment.create!(name: 'Interview Prep', description: 'Prepare yourself for your upcoming mock interview', due_date: '10/10/2019', course_id: 2)
+Assignment.create!(name: 'Portfolio', description: 'Create a portolio showcasing some of your best projects', due_date: '10/4/2019', course_id: 3)
+Assignment.create!(name: 'Interview Prep', description: 'Prepare yourself for your upcoming mock interview', due_date: '10/10/2019', course_id: 3)
