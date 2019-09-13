@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  # before_action: :set_course, only: %i[show update destroy]
+  before_action :set_course, only: %i[show update destroy]
 
   def index
     @user = User.find(params[:user_id])
@@ -9,8 +9,6 @@ class CoursesController < ApplicationController
 
   def show
     begin
-      @user = User.find(params[:user_id])
-      @course = Course.where(user_id: @user.id).find(params[:id])
       render json: @course, status: :ok
     rescue ActiveRecord::RecordNotFound
       render json: { message: 'course not found' }, status: 404
@@ -30,8 +28,6 @@ class CoursesController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user_id])
-    @course = Course.where(user_id: @user.id).find(params[:id])
     if @course.update(course_params)
       render json: @course, status: :ok
     else
@@ -40,12 +36,15 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @course = Course.where(user_id: @user.id).find(params[:id])
     @course.destroy
   end
 
   private
+
+  def set_course
+    @user = User.find(params[:user_id])
+    @course = Course.where(user_id: @user.id).find(params[:id])
+  end
 
   def course_params
     params.permit(:name, :description)

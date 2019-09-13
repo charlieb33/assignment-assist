@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-  # before_action: :set_assignment, only: %i[show update destroy]
+  before_action :set_assignment, only: %i[show update destroy]
 
   def index
     @user = User.find(params[:user_id])
@@ -10,9 +10,6 @@ class AssignmentsController < ApplicationController
 
   def show
     begin
-      @user = User.find(params[:user_id])
-      @course = Course.where(user_id: @user.id).find(params[:course_id])
-      @assignment = Assignment.where(course_id: @course.id).find(params[:id])
       render json: @assignment, status: :ok
     rescue ActiveRecord::RecordNotFound
       render json: { message: 'assignment not found' }, status: 404
@@ -33,9 +30,6 @@ class AssignmentsController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user_id])
-    @course = Course.where(user_id: @user.id).find(params[:course_id])
-    @assignment = Assignment.where(course_id: @course.id).find(params[:id])
     if @assignment.update(assignment_params)
       render json: @assignment, status: :ok
     else
@@ -44,13 +38,16 @@ class AssignmentsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @course = Course.where(user_id: @user.id).find(params[:id])
-    @assignment = Assignment.where(course_id: @course.id).find(params[:id])
     @assignment.destroy
   end
 
   private
+
+  def set_assignment
+    @user = User.find(params[:user_id])
+    @course = Course.where(user_id: @user.id).find(params[:course_id])
+    @assignment = Assignment.where(course_id: @course.id).find(params[:id])
+  end
 
   def assignment_params
     params.permit(:name, :description, :due_date)
