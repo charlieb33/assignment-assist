@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_user, only: %i[show update destroy]
-    # before_action :authorize_request, except: :create
+    before_action :authorize_request, except: :create
 
     def index
         @users = User.all
@@ -33,14 +33,14 @@ class UsersController < ApplicationController
         @user.destroy
     end
 
-    # def verify
-    #     @user = {
-    #         id: @current_user[:id],
-    #         username: @current_user[:username],
-    #         email: @current_user[:email]
-    #     }
-    #     render json: @user
-    # end
+    def verify
+        @user = {
+            id: @current_user[:id],
+            username: @current_user[:username],
+            email: @current_user[:email]
+        }
+        render json: @user
+    end
 
     private
 
