@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
+import { withRouter } from 'react-router';
+
+import decode from 'jwt-decode';
+
 // import './App.css';
 
-function App() {
-  return (
-    <div className="app-container">
-      <h1>Hello World</h1>
-    </div>
-  );
+class App extends Component {
+  state = {
+    courses: [],
+    courseForm: {
+      name: "",
+      description: ""
+    },
+    currentUser: null,
+    authFormData: {
+      username: "",
+      email: "",
+      password: ""
+    }
+  };
+
+  render() {
+    return (
+      <div className="app-container">
+        <h1>Hello World</h1>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);
