@@ -14,6 +14,12 @@ function App() {
           exact path="/"
           render={() => <Home />}
         />
+        <Route
+          path="/new/course"
+        />
+        <Route
+          path="course/:course_id"
+        />
       </Switch>
     </div>
   );

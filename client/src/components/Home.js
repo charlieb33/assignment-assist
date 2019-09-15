@@ -7,7 +7,7 @@ import {
     readOneCourse,
     logInUser,
     registerUser,
-    verifyUser
+    verifyUser,
 } from "../services/api-helper";
 
 class Home extends Component {
@@ -18,6 +18,13 @@ class Home extends Component {
             description: ""
         },
         currentUser: null
+    };
+
+    getCourses = async () => {
+        const courses = await readAllCourses();
+        this.setState({
+            courses
+        });
     };
 
     componentDidMount() {}

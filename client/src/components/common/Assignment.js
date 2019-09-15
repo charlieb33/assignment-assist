@@ -14,9 +14,22 @@ class Assignment extends Component {
         }
     };
 
+    deleteAssignment = async(assignment_id) => {
+        await destroyAssignment(assignment_id);
+        this.setState(prevState => ({
+            assignments: prevState.assignments.filter(
+                assignment => assignment.assignment_id !== assignment)
+            })
+        );
+    };
+
     render() {
         return(
-            <h1>Assignment Test</h1>
+            <div>
+                <Route
+                    path="course/:course_id/assignment/:assignment_id/edit"
+                />
+            </div>
         );
     };
 };
