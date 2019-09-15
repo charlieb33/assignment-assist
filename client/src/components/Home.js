@@ -1,7 +1,31 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import {
+    createCourse,
+    readAllCourses,
+    readOneCourse,
+    logInUser,
+    registerUser,
+    verifyUser
+} from "../services/api-helper";
+
 class Home extends Component {
+    state = {
+        courses: [],
+        courseForm: {
+            name: "",
+            description: ""
+        },
+        currentUser: null
+    };
+
+    componentDidMount() {}
+
+    componentDidUpdate() {}
+
+    componentWillUnmount() {}
+
     render() {
         return (
             <div className="home-container">
