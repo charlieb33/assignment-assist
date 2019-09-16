@@ -7,9 +7,10 @@ const api = axios.create({
 });
 
 export const logInUser = async (logInData) => {
-    const resp = api.post('/auth/login', logInData);
-    localStorage.setItem('authToken', resp.data.token);
+    const resp = await api.post('/auth/login', logInData);
+    localStorage.setItem('jwt', resp.data.token);
     api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
+    // console.log(resp.data.token)
     return resp.data.user;
 };
 
