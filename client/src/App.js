@@ -31,8 +31,7 @@ class App extends Component {
     const userData = await logInUser(this.state.authFormData);
     this.setState({
       currentUser: userData
-    });
-    localStorage.setItem("jwt", userData.token)
+    }); 
   };
 
   handleRegister = async (event) => {

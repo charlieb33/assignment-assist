@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CourseList from "./CourseList";
 import { Link } from "react-router-dom";
 
 import {
@@ -15,12 +16,6 @@ class Home extends Component {
             courseForm: {
                 name: "",
                 description: ""
-            },
-            currentUser: null,
-            authFormData: {
-                username: "",
-                email: "",
-                password: ""
             }
         };
     }
@@ -32,7 +27,9 @@ class Home extends Component {
         });
     };
 
-    componentDidMount() {}
+    componentDidMount() {
+        this.getCourses();
+    }
 
     componentDidUpdate() {}
 
@@ -44,6 +41,10 @@ class Home extends Component {
                 { this.props.currentUser ?
                     <div className="courses-container">
                         <h2>Courses</h2>
+                        <CourseList
+                            courses={this.state.courses}
+                            courseForm={this.state.courseForm}
+                        />
                     </div>
                     :
                     <div className="about-the-app">
