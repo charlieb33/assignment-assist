@@ -40,7 +40,7 @@ class Course extends Component {
     }
 
     render() {
-        const { course } = this.props
+        const { course } = this.state
         return (
             <div className="course-item-container">
                 <h2>{course.name}</h2>
@@ -51,8 +51,11 @@ class Course extends Component {
                             handleFormChange={this.props.handleFormChange}
                             handleSubmit={(event) => {
                                 event.preventDefault();
-                                this.props.editInstructor();
-                                this.setState({ isEdit: false })
+                                this.props.editCourse();
+                                this.setState({
+                                    isEdit: false,
+                                    course: this.course
+                                })
                                 this.props.history.push(`/courses/${this.props.courseForm.id}`)
                             }}
                             courseForm={this.props.courseForm}
