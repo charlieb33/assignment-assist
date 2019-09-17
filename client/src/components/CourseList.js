@@ -1,25 +1,42 @@
-import React from 'react';
+import React, { Component} from 'react';
+import { Link } from "react-router-dom";
 import { withRouter } from 'react-router';
 
-const CourseList = (props) => {
-    return(
-        <div className="course-list-container">
-            <div>
-                { props.courses.map(course => (
-                    <div
-                        key={course.id}
-                        className="course-card"
-                        onClick={() => props.history.push(`/courses/${course.id}`)}
-                    >
-                        <h3>{course.name}</h3>
-                    </div>
-                ))}
+import { readOneCourse } from "../services/api-helper";
+
+class CourseList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            courseData: []
+        }
+    }
+
+    render() {
+        return (
+            <div className="course-list-container">
+                <div>
+                    {this.props.courses.map(course => (
+                        <div
+                            key={course.id}
+                            className="course-card"
+                            onClick={() => {
+                                this.props.history.push(`/courses/${course.id}`, {id: course.id})
+                                // console.log(this.props)
+                            }}
+                        >
+                            <h3>{course.name}</h3>
+                        </div>
+                    ))}
+                </div>
+                <div className="add-course">
+                    <Link to="/new/course">
+                        <h4>Add a Course</h4>
+                    </Link>
+                </div>
             </div>
-            <div className="add-course">
-                <h3>Add a Course</h3>
-            </div>
-        </div>
-    );
+        );
+    }
 };
 
 export default withRouter(CourseList);

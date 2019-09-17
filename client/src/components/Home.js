@@ -1,34 +1,22 @@
 import React, { Component } from "react";
 import CourseList from "./CourseList";
-import { Link } from "react-router-dom";
-
-import {
-    createCourse,
-    readAllCourses,
-    readOneCourse,
-} from "../services/api-helper";
+import { Route, Switch } from "react-router-dom";
+import { withRouter } from 'react-router';
 
 class Home extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            courses: [],
-            courseForm: {
-                name: "",
-                description: ""
-            }
-        };
     }
 
-    getCourses = async () => {
-        const courses = await readAllCourses();
-        this.setState({
-            courses
-        });
-    };
-
     componentDidMount() {
-        this.getCourses();
+        this.props.getCourses();
+        // const checkUser = localStorage.getItem("jwt");
+        // if (checkUser) {
+        //     const user = decode(checkUser);
+        //     this.setState({
+        //         currentUser: user,
+        //     })
+        // }
     }
 
     componentDidUpdate() {}
@@ -42,8 +30,8 @@ class Home extends Component {
                     <div className="courses-container">
                         <h2>Courses</h2>
                         <CourseList
-                            courses={this.state.courses}
-                            courseForm={this.state.courseForm}
+                            courses={this.props.courses}
+                            courseForm={this.props.courseForm}
                         />
                     </div>
                     :

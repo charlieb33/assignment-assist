@@ -43,7 +43,7 @@ const readOneCourse = async (course_id) => {
 
 const createCourse = async (course_data) => {
     const userId = localStorage.getItem("user_id")
-    const resp = await api.post(`/users/${userId}/courses`, { course: course_data });
+    const resp = await api.post(`/users/${userId}/courses`, course_data);
     return resp.data;
 };
 

@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import React, { Component } from "react";
+import AssignmentList from "../AssignmentList"
+import { Route } from "react-router-dom";
+import { withRouter } from "react-router";
 
 import {
     createAssignment,
     readAllAssignments,
     readOneAssignment,
-    destroyCourse,
-    updateCourse
 } from "../../services/api-helper";
 
 class Course extends Component {
@@ -19,48 +18,44 @@ class Course extends Component {
             assignmentForm: {
                 name: "",
                 description: "",
-                due_date: ""
-            }
+                dueDate: ""
+            },
+            course: props.course
         };
     };
 
     getAssignments = async () => {
         const assignments = await readAllAssignments();
-        this.setState({
-            assignments
-        });
+        console.log(assignments)
+        // this.setState({
+        //     assignments
+        // });
     };
 
-    deleteCourse = async (course_id) => {
-        await destroyCourse(course_id);
-        this.setState(prevState => ({
-            courses: prevState.courses.filter(
-                course => course.course_id !== course_id)
-            })
-        );
-    };
+    async componentDidMount() {
+        await this.getAssignments()
+    }
 
-    componentDidMount() {}
+    // componentDidUpdate() {}
 
-    componentDidUpdate() {}
-
-    componentWillUnmount() {}
+    // componentWillUnmount() {}
 
     render() {
+        const { course } = this.state
+        console.log(course)
         return(
+
             <div>
-                <Route
-                    path="course/:course_id/edit"
+                <h1>{course.name}Course</h1>
+                <p>{course.description}</p>
+                <AssignmentList
+                    assignments={this.state.assignments}
+                    assignmentForm={this.state.assignmentForm}
                 />
-                <Route
-                    path="course/:course_id/new/assignment"
-                />
-                <Route
-                    path="course/:course_id/assignment/:assignment_id"
-                />
+
             </div>
         );
     };
 }
 
-export default withRouter(Course);
+export default Course;
