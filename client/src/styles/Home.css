@@ -16,7 +16,11 @@
 }
 
 .home-container > h2 {
-    font-size: 50rem;;
+    font-size: 50rem;
+}
+
+.courses-container > h2 {
+    text-decoration: underline;
 }
 
 @media only screen and (max-width: 768px) {

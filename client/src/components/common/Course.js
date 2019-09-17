@@ -9,6 +9,8 @@ import {
     readOneAssignment,
 } from "../../services/api-helper";
 
+import "../../styles/Course.css";
+
 class Course extends Component {
     constructor(props) {
         super(props);
@@ -34,16 +36,12 @@ class Course extends Component {
     async componentDidMount() {
         await this.getAssignments()
     }
-
-    // componentDidUpdate() {}
-
-    // componentWillUnmount() {}
-
+    
     render() {
         const { course } = this.props
-        return(
+        return (
             <div className="course-item-container">
-                <h1>{course.name}</h1>
+                <h2>{course.name}</h2>
                 <p>{course.description}</p>
                 <h3>Assignments</h3>
                 <AssignmentList
