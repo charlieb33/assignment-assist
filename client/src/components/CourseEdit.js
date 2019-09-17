@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 const CourseEdit = (props) => {
     return (
         <div className="course-create-form">
-            <h2>Edit Course</h2>
+            <h3>Edit Course</h3>
             <form onSubmit={props.newCourse}>
                 <p>Course Name:</p>
                 <input

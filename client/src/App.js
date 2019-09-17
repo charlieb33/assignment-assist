@@ -60,6 +60,7 @@ class App extends Component {
 
   editCourse = async () => {
     const { courseForm } = this.state;
+    console.log(courseForm)
     await updateCourse(courseForm.id, courseForm);
     this.setState(prevState => ({
       courses: prevState.courses.map(
@@ -75,6 +76,15 @@ class App extends Component {
         course => course.course_id !== course_id)
     })
     );
+  };
+
+  mountEditForm = async (course_id) => {
+    const courses = await readAllCourses()
+    const course = courses.find(el => el.id === parseInt(course_id))
+    this.setState({
+      courses,
+      coursesForm: course
+    })
   };
 
   handleCourseFormChange = (event) => {
@@ -115,6 +125,7 @@ class App extends Component {
     this.setState({
       currentUser: null
     });
+    this.props.history.push("/")
   };
 
   render() {
@@ -183,6 +194,7 @@ class App extends Component {
                   currentUser={this.state.currentUser}
                   courseForm={this.state.courseForm}
                   handleFormChange={this.handleCourseFormChange}
+                  mountEditForm={this.mountEditForm}
                   editCourse={this.editCourse}
                   deleteCourse={this.deleteCourse}
                 />

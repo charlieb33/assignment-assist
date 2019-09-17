@@ -17,9 +17,6 @@ const AssignmentList = (props) => {
                     </div>
                 ))}
             </div>
-            <div className="add-assignment">
-                <h3>Add an Assignment</h3>
-            </div>
         </div>
     );
 };
