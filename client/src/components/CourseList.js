@@ -17,16 +17,13 @@ class CourseList extends Component {
             <div className="course-list-container">
                 <div>
                     {this.props.courses.map(course => (
-                        <div
+                        <Link
                             key={course.id}
                             className="course-card"
-                            onClick={() => {
-                                this.props.history.push(`/courses/${course.id}`, {id: course.id})
-                                console.log(this.props)
-                            }}
+                            to={`/courses/${course.id}`}
                         >
                             <h3>{course.name}</h3>
-                        </div>
+                        </Link>
                     ))}
                 </div>
                 <div className="add-course">

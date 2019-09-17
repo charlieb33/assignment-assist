@@ -25,11 +25,10 @@ class Course extends Component {
     };
 
     getAssignments = async () => {
-        const assignments = await readAllAssignments();
-        console.log(assignments)
-        // this.setState({
-        //     assignments
-        // });
+        const assignments = await readAllAssignments(this.props.course.id);
+        this.setState({
+            assignments
+        });
     };
 
     async componentDidMount() {
@@ -41,13 +40,12 @@ class Course extends Component {
     // componentWillUnmount() {}
 
     render() {
-        const { course } = this.props.state
-        console.log(course)
+        const { course } = this.props
         return(
-
-            <div>
-                <h1>{course.name}Course</h1>
+            <div className="course-item-container">
+                <h1>{course.name}</h1>
                 <p>{course.description}</p>
+                <h3>Assignments</h3>
                 <AssignmentList
                     assignments={this.state.assignments}
                     assignmentForm={this.state.assignmentForm}

@@ -78,7 +78,6 @@ class App extends Component {
   };
 
   handleCourseFormChange = (event) => {
-    console.log(event.target)
     const { name, value } = event.target;
     this.setState(prevState => ({
       courseForm: {
@@ -90,7 +89,6 @@ class App extends Component {
 
   handleLogIn = async () => {
     const userData = await logInUser(this.state.authFormData);
-    console.log(userData)
     this.setState({
       currentUser: userData
     });
@@ -172,21 +170,21 @@ class App extends Component {
             )}
           />
           <Route
-            path="/course/:course_id"
+            path="/courses/:course_id"
             render={props => {
-              const { id } = props.match.params;
+              const { course_id } = props.match.params;
               const course = this.state.courses.find(
-                el => el.id === parseInt(id)
+                el => el.id === parseInt(course_id)
               );
-              console.log(course)
               return (
                 <Course
-                  id={id}
+                  course_id={course_id}
                   course={course}
                   currentUser={this.state.currentUser}
                   courseForm={this.state.courseForm}
                   handleFormChange={this.handleCourseFormChange}
                   editCourse={this.editCourse}
+                  deleteCourse={this.deleteCourse}
                 />
               );
             }}
