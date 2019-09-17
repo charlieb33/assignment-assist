@@ -1,0 +1,27 @@
+{
+  "name": "assignment-assist",
+  "version": "1.0.0",
+  "description": "## About the App Allows users to keep track of what courses they have and assignments for them. Users can create a new account or log into an existing one. Only users that are logged in may create, edit, or remove courses and assignments. Regardless of whether or not the user is logged in, they may still see the courses and their corresponding assignments.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlieb33/assignment-assist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlieb33/assignment-assist/issues"
+  },
+  "homepage": "https://github.com/charlieb33/assignment-assist#readme"
+}
