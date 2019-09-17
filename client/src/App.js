@@ -60,7 +60,6 @@ class App extends Component {
 
   editCourse = async () => {
     const { courseForm } = this.state;
-    console.log(courseForm)
     await updateCourse(courseForm.id, courseForm);
     this.setState(prevState => ({
       courses: prevState.courses.map(
