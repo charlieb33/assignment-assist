@@ -1,5 +1,8 @@
 .app-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100vh;
+    background: url("https://www.doxhub.org/wp-content/uploads/2019/01/Lined-paper-0.5-inch-left-side-border-letter-format-RED-BLUE-Landscape.png");
+    background-size: cover;
+    background-repeat: repeat;
 }

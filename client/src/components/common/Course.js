@@ -41,7 +41,7 @@ class Course extends Component {
     // componentWillUnmount() {}
 
     render() {
-        const { course } = this.state
+        const { course } = this.props.state
         console.log(course)
         return(
 

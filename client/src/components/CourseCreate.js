@@ -1,9 +1,11 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
+import "../styles/CourseCreate.css"
+
 const CourseCreate = (props) => {
     return (
-        <div className="course-create-form">
+        <div className="course-create-container">
             <h2>Create a new course</h2>
             <form onSubmit={props.newCourse}>
                 <p>Course Name:</p>

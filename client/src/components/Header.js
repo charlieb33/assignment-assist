@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "../styles/Header.css"
+
 const Header = (props) => {
     return(
         <div className="header-container">
@@ -9,7 +11,7 @@ const Header = (props) => {
             >
                 <h1>Assignment Assist</h1>
             </Link>
-            <div className="">
+            <div className="login-display-section">
                 { props.currentUser ?
                     <>
                         <h3>{props.currentUser.username}</h3>

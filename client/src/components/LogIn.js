@@ -1,6 +1,8 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 
+import "../styles/AuthForm.css";
+
 const LogIn = (props) => {
     return(
         props.currentUser ?

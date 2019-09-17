@@ -1,0 +1,9 @@
+.course-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.course-list-container > h3 {
+    padding: auto;
+}

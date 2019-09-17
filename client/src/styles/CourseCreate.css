@@ -1,0 +1,53 @@
+.course-create-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #AEA8BA;
+    padding: 2rem;
+    width: 60rem;
+    border: 0.3rem solid #000;
+    border-radius: 0.5rem;
+    margin: 5rem auto;
+}
+
+.course-create-container > h2 {
+    font-size: 1.7rem;
+    text-decoration: underline;
+}
+
+.course-create-container > form > p {
+    font-size: 1.4rem;
+}
+
+.course-create-container > form > input {
+    font-size: 1.2rem;
+}
+
+.course-create-container > form > button {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .course-create-container {
+        width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .header-container > a > h1 {
+        font-size: 1.2rem;
+    }
+
+    .login-display-section {
+        width: 8rem;
+    }
+
+    .login-display-section > h3 {
+        font-size: 1rem;
+    }
+    
+    .login-display-section > h3 > a {
+        font-size: 1rem;
+    }
+}

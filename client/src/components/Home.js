@@ -3,6 +3,8 @@ import CourseList from "./CourseList";
 import { Route, Switch } from "react-router-dom";
 import { withRouter } from 'react-router';
 
+import "../styles/Home.css";
+
 class Home extends Component {
     constructor(props) {
         super(props)
@@ -36,6 +38,7 @@ class Home extends Component {
                     </div>
                     :
                     <div className="about-the-app">
+                        <h2>About the App</h2>
                         <p>
                             A new and convenient way to keep track of your courses and assignments.
                             Simply log in or register to begin. Once you are signed in, you will be

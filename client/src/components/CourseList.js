@@ -22,7 +22,7 @@ class CourseList extends Component {
                             className="course-card"
                             onClick={() => {
                                 this.props.history.push(`/courses/${course.id}`, {id: course.id})
-                                // console.log(this.props)
+                                console.log(this.props)
                             }}
                         >
                             <h3>{course.name}</h3>

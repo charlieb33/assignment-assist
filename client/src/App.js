@@ -22,7 +22,7 @@ import {
   updateAssignment,
 } from "./services/api-helper";
 
-// import "./styles/App.css";
+import "./styles/App.css";
 
 class App extends Component {
   state = {

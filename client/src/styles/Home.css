@@ -1,0 +1,41 @@
+.home-container {
+    border: 0.3rem solid #000;
+    padding: 1.5rem;
+    background-color: #FCF7FF;
+    border-radius: 0.5rem;
+    width: 60rem;
+    margin: 5rem auto;
+}
+
+.about-the-app {
+    font-size: 1.3rem;
+}
+
+.about-the-app > h2 {
+    text-decoration: underline;
+}
+
+.home-container > h2 {
+    font-size: 50rem;;
+}
+
+@media only screen and (max-width: 768px) {
+    .home-container {
+        width: 30rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .home-container {
+        width: 15rem;
+        margin: 2rem auto;
+    }
+
+    .about-the-app > p {
+        font-size: 1rem;
+    }
+
+    .about-the-app > h2 {
+        font-size: 1.5rem;
+    }
+}
