@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = "https://assignment-assist.herokuapp.com/";
+const baseUrl = "http://localhost:3000";
 
 const api = axios.create({
     baseURL: baseUrl
@@ -15,7 +15,8 @@ export const logInUser = async (logInData) => {
 };
 
 export const registerUser = async (registerData) => {
-    const resp = await api.post('/users', { user: {registerData} });
+    console.log(registerData)
+    const resp = await api.post('/users', { user: registerData });
     return resp.data;
 };
 
