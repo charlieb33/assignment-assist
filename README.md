@@ -3,6 +3,9 @@
 ## About the App
 Allows users to keep track of what courses they have and assignments for them. Users can create a new account or log into an existing one. Only users that are logged in may create, edit, or remove courses and assignments. Regardless of whether or not the user is logged in, they may still see the courses and their corresponding assignments.
 
+## Check it Out
+http://assignment-assist.surge.sh/
+
 ## Wireframes
 <img width="1000" alt="Screen Shot 2019-09-11 at 8 59 28 AM" src="https://user-images.githubusercontent.com/44616151/64699618-23e44200-d473-11e9-80c1-29f84f854bb2.png">
 <img width="1015" alt="Screen Shot 2019-09-11 at 8 59 54 AM" src="https://user-images.githubusercontent.com/44616151/64701008-f0ef7d80-d475-11e9-9e6e-28afc932c6ab.png">
