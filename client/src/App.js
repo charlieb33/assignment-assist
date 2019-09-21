@@ -56,14 +56,15 @@ class App extends Component {
         description: ""
       }
     }));
+    this.props.history.push("/");
   };
 
   editCourse = async () => {
     const { courseForm } = this.state;
     await updateCourse(courseForm.id, courseForm);
     this.setState(prevState => ({
-      courses: prevState.courses.map(
-        course => course.id === courseForm.id ? courseForm : course
+      courses: prevState.courses.map(course =>
+        course.id === courseForm.id ? courseForm : course
       )
     }));
   };
@@ -75,15 +76,7 @@ class App extends Component {
         course => course.course_id !== course_id)
     })
     );
-  };
-
-  mountEditForm = async (course_id) => {
-    const courses = await readAllCourses()
-    const course = courses.find(el => el.id === parseInt(course_id))
-    this.setState({
-      courses,
-      coursesForm: course
-    })
+    this.props.history.push("/");
   };
 
   handleCourseFormChange = (event) => {
@@ -96,11 +89,21 @@ class App extends Component {
     }));
   };
 
+  mountEditForm = async (course_id) => {
+    const courses = await readAllCourses()
+    const course = courses.find(el => el.id === parseInt(course_id))
+    this.setState({
+      courses,
+      courseForm: course
+    })
+  };
+
   handleLogIn = async () => {
     const userData = await logInUser(this.state.authFormData);
     this.setState({
-      currentUser: userData
+      currentUser: userData,
     });
+    localStorage.setItem("jwt", userData.token);
   };
 
   handleRegister = async (event) => {
@@ -124,7 +127,7 @@ class App extends Component {
     this.setState({
       currentUser: null
     });
-    this.props.history.push("/")
+    this.props.history.push("/");
   };
 
   render() {

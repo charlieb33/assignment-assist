@@ -36,8 +36,8 @@ class Course extends Component {
 
     componentDidMount = () => {
         this.getAssignments();
-        this.props.mountEditForm(this.props.id);
-    }
+        this.props.mountEditForm(this.props.course_id);
+    };
 
     render() {
         const { course } = this.state
@@ -54,9 +54,8 @@ class Course extends Component {
                                 this.props.editCourse();
                                 this.setState({
                                     isEdit: false,
-                                    course: this.course
                                 })
-                                this.props.history.push(`/courses/${this.props.courseForm.id}`)
+                                this.props.history.push(`/courses/${this.props.courseForm.id}`);
                             }}
                             courseForm={this.props.courseForm}
                         />

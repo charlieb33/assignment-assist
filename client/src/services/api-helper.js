@@ -8,14 +8,13 @@ const api = axios.create({
 
 export const logInUser = async (logInData) => {
     const resp = await api.post('/auth/login', logInData);
-    localStorage.setItem("user_id", resp.data.user.id)
+    localStorage.setItem("user_id", resp.data.user.id);
     localStorage.setItem('jwt', resp.data.token);
     api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
     return resp.data.user;
 };
 
 export const registerUser = async (registerData) => {
-    console.log(registerData)
     const resp = await api.post('/users', { user: registerData });
     return resp.data;
 };
@@ -50,10 +49,7 @@ const createCourse = async (course_data) => {
 
 const updateCourse = async (course_id, course_data) => {
     const userId = localStorage.getItem("user_id")
-    const resp = await api.put(
-        `/users/${userId}/courses/${course_id}/`,
-        { course: course_data }
-    );
+    const resp = await api.put(`/users/${userId}/courses/${course_id}/`, { course: course_data });
     return resp.data;
 };
 
