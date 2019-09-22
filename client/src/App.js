@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
 
-// import decode from "jwt-decode";
+import decode from "jwt-decode";
 
 import Course from "./components/common/Course";
 import CourseCreate from "./components/CourseCreate";
@@ -32,6 +32,7 @@ class App extends Component {
       description: ""
     },
     currentUser: null,
+    token: null,
     authFormData: {
       username: "",
       email: "",
@@ -101,8 +102,10 @@ class App extends Component {
   handleLogIn = async () => {
     const userData = await logInUser(this.state.authFormData);
     this.setState({
-      currentUser: userData,
+      currentUser: userData.user,
+      // token: decode(userData.token)
     });
+    console.log("userData", userData)
     localStorage.setItem("jwt", userData.token);
   };
 
@@ -124,11 +127,23 @@ class App extends Component {
 
   handleLogOut = async () => {
     localStorage.removeItem("jwt");
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("authToken");
     this.setState({
       currentUser: null
     });
     this.props.history.push("/");
   };
+
+  componentDidMount = async () => {
+    this.getCourses()
+    const user = await verifyUser();
+    if (user) {
+      this.setState({
+        currentUser: user
+      })
+    }
+  }
 
   render() {
     return (

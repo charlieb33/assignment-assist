@@ -10,10 +10,6 @@ class Home extends Component {
         super(props)
     }
 
-    componentDidMount() {
-        this.props.getCourses();
-    }
-
     componentDidUpdate() {}
 
     componentWillUnmount() {}
