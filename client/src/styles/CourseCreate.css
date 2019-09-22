@@ -7,11 +7,12 @@
     width: 60rem;
     border: 0.3rem solid #000;
     border-radius: 0.5rem;
-    margin: 5rem auto;
+    margin: 2rem auto;
 }
 
 .course-create-container > h2 {
     font-size: 1.7rem;
+    margin: 0 auto;
     text-decoration: underline;
 }
 
@@ -32,22 +33,66 @@
     .course-create-container {
         width: 30rem;
     }
+
+    .course-create-container > h2 {
+        font-size: 2rem;
+        margin: 0.5rem;
+    }
+
+    .course-create-container > form > p {
+        font-size: 1.5rem;
+    }
+    
+    .course-create-container > form > input {
+        font-size: 1.3rem;
+    }
+    
+    .course-create-container > form > button {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .course-create-container {
+        width: 18rem;
+    }
+
+    .course-create-container > h2 {
+        font-size: 1.6rem;
+    }
+
+    .course-create-container > form > p {
+        font-size: 1.3rem;
+    }
+    
+    .course-create-container > form > input {
+        font-size: 1.3rem;
+    }
+    
+    .course-create-container > form > button {
+        font-size: 1.2rem;
+    }
 }
 
 @media only screen and (max-width: 375px) {
-    .header-container > a > h1 {
-        font-size: 1.2rem;
+    .course-create-container {
+        width: 15rem;
     }
 
-    .login-display-section {
-        width: 8rem;
+    .course-create-container > h2 {
+        font-size: 1.4rem;
+        margin: 0.5rem;
     }
 
-    .login-display-section > h3 {
-        font-size: 1rem;
+    .course-create-container > form > p {
+        font-size: 1.1rem;
     }
     
-    .login-display-section > h3 > a {
-        font-size: 1rem;
+    .course-create-container > form > input {
+        font-size: 0.9rem;
+    }
+    
+    .course-create-container > form > button {
+        font-size: 0.9rem;
     }
 }

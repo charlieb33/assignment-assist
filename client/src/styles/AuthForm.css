@@ -7,12 +7,13 @@
     width: 60rem;
     border: 0.3rem solid #000;
     border-radius: 0.5rem;
-    margin: 5rem auto;
+    margin: 2rem auto;
 }
 
 .auth-container > h2 {
     font-size: 1.7rem;
     text-decoration: underline;
+    margin: 0 auto;
 }
 
 .auth-container > form > p {
@@ -34,11 +35,11 @@
     }
 
     .auth-container > h2 {
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
 
     .auth-container > form > p {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
     
     .auth-container > form > input {
@@ -46,7 +47,30 @@
     }
     
     .auth-container > form > button {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .auth-container {
+        width: 15rem;
+        margin: 2rem auto;
+    }
+
+    .auth-container > h2 {
+        font-size: 1.7rem;
+    }
+
+    .auth-container > form > p {
         font-size: 1.3rem;
+    }
+    
+    .auth-container > form > input {
+        font-size: 1.2rem;
+    }
+    
+    .auth-container > form > button {
+        font-size: 1.2rem;
     }
 }
 
@@ -69,6 +93,6 @@
     }
     
     .auth-container > form > button {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 }

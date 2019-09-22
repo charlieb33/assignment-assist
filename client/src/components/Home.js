@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CourseList from "./CourseList";
 import { Route, Switch } from "react-router-dom";
-import { withRouter } from 'react-router';
+import { withRouter } from "react-router";
 
 import "../styles/Home.css";
 
@@ -12,13 +12,6 @@ class Home extends Component {
 
     componentDidMount() {
         this.props.getCourses();
-        // const checkUser = localStorage.getItem("jwt");
-        // if (checkUser) {
-        //     const user = decode(checkUser);
-        //     this.setState({
-        //         currentUser: user,
-        //     })
-        // }
     }
 
     componentDidUpdate() {}

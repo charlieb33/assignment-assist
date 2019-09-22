@@ -27,7 +27,7 @@ class Assignment extends Component {
         return(
             <div>
                 <Route
-                    path="course/:course_id/assignment/:assignment_id/edit"
+                    path="course/:course_id/assignment/:assignment_id/"
                 />
             </div>
         );

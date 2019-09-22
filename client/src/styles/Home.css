@@ -4,22 +4,21 @@
     background-color: #FCF7FF;
     border-radius: 0.5rem;
     width: 60rem;
-    margin: 5rem auto;
-}
-
-.about-the-app {
-    font-size: 1.3rem;
+    margin: 2rem auto;
 }
 
 .about-the-app > h2 {
+    font-size: 1.8rem;
     text-decoration: underline;
+    margin: 0 auto;
 }
 
-.home-container > h2 {
-    font-size: 50rem;
+.about-the-app > p {
+    font-size: 1.3rem;
 }
 
 .courses-container > h2 {
+    font-size: 1.8rem;
     text-decoration: underline;
 }
 
@@ -27,12 +26,46 @@
     .home-container {
         width: 30rem;
     }
+
+    .courses-container > h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-the-app > h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-the-app > p {
+        font-size: 1.7rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .home-container {
+        width: 18rem;
+    }
+
+    .about-the-app > h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-the-app > p {
+        font-size: 1.1rem;
+    }
+
+    .courses-container > h2 {
+        font-size: 1.6rem;
+    }
 }
 
 @media only screen and (max-width: 375px) {
     .home-container {
         width: 15rem;
         margin: 2rem auto;
+    }
+
+    .courses-container > h2 {
+        font-size: 1.5rem;
     }
 
     .about-the-app > p {

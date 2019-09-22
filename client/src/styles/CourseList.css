@@ -12,11 +12,48 @@
     justify-content: center;
     text-align: center;
     width: 10rem;
-    margin: 2rem;
+    margin: 1rem;
+    padding: 0.7rem;
     border-radius: 0.5rem;
-    background-color: lightblue;
+    background-color: #00C8F3;
+    border: 0.2rem dashed #000;
+    border-radius: 0.5rem;
 }
 
 .course-card:hover {
     cursor: pointer;
+}
+
+.add-course > a > h4 {
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .course-card {
+        font-size: 1.1rem;
+    }
+
+    .add-course > a > h4 {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .course-card {
+        font-size: 0.9rem;
+    }
+
+    .add-course > a > h4 {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .course-card {
+        font-size: 0.8rem;
+    }
+
+    .add-course > a > h4 {
+        font-size: 1rem;
+    }
 }

@@ -1,10 +1,12 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
+import "../styles/CourseEdit.css";
+
 const CourseEdit = (props) => {
     return (
         <div className="course-edit-form">
-            <h3>Edit Course</h3>
+            <h2>Edit Course</h2>
             <form onSubmit={props.handleSubmit}>
                 <p>Course Name:</p>
                 <input
