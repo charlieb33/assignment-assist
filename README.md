@@ -3,8 +3,18 @@
 ## About the App
 Allows users to keep track of what courses they have and assignments for them. Users can create a new account or log into an existing one. Only users that are logged in may create, edit, or remove courses and assignments. Regardless of whether or not the user is logged in, they may still see the courses and their corresponding assignments.
 
+## MVP
+* Allow user to log into an existing account or register for a new one
+* Auth persists (i.e. the user stays logged in even after refreshing)
+* CRUD functionality to courses in the user's account (user can create, read, update, or delete courses in their account)
+
 ## Check it Out
-http://assignment-assist.surge.sh/
+assignment-assist.surge.sh
+
+## Instructions
+1. Clone the app into your terminal
+2. cd into the app (assignment-assist), and type "bundle install" to set up the backend
+3. cd into the client directory, and type "npm install" to set up front end
 
 ## Wireframes
 <img width="1000" alt="Screen Shot 2019-09-11 at 8 59 28 AM" src="https://user-images.githubusercontent.com/44616151/64699618-23e44200-d473-11e9-80c1-29f84f854bb2.png">
