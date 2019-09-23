@@ -9,7 +9,7 @@ Allows users to keep track of what courses they have and assignments for them. U
 * CRUD functionality to courses in the user's account (user can create, read, update, or delete courses in their account)
 
 ## Check it Out
-assignment-assist.surge.sh
+http://assignment-assist.surge.sh/
 
 ## Instructions
 1. Clone the app into your terminal
