@@ -12,6 +12,7 @@ const CourseCreate = (props) => {
                 <input
                     type="text"
                     name="name"
+                    placeholder="Course Name"
                     value={props.courseForm.name}
                     onChange={props.handleFormChange}
                 />
@@ -19,6 +20,7 @@ const CourseCreate = (props) => {
                 <input
                     type="text"
                     name="description"
+                    placeholder="Course Description"
                     value={props.courseForm.description}
                     onChange={props.handleFormChange}
                 />

@@ -103,9 +103,7 @@ class App extends Component {
     const userData = await logInUser(this.state.authFormData);
     this.setState({
       currentUser: userData.user,
-      // token: decode(userData.token)
     });
-    console.log("userData", userData)
     localStorage.setItem("jwt", userData.token);
   };
 

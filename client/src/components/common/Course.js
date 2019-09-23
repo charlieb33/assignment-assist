@@ -55,7 +55,7 @@ class Course extends Component {
                                 this.setState({
                                     isEdit: false,
                                 })
-                                this.props.history.push(`/courses/${this.props.courseForm.id}`);
+                                this.props.history.push("/");
                             }}
                             courseForm={this.props.courseForm}
                         />
